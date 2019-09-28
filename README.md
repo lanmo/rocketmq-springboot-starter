@@ -1,4 +1,3 @@
-#如何使用
 ## 1、修改maven仓库地址url
     <repositories>
          <repository>
