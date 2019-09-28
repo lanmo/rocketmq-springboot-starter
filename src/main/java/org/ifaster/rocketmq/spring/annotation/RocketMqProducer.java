@@ -68,7 +68,7 @@ public @interface RocketMqProducer {
      * ${customizedTraceTopic:} :后面为默认值
      * @return
      */
-    String customizedTraceTopic();
+    String customizedTraceTopic() default "";
 
     /**
      * 发送超时时间

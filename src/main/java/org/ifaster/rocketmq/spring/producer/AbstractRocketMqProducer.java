@@ -103,10 +103,10 @@ public abstract class AbstractRocketMqProducer extends AbstractLifeCycle impleme
         try {
             producer.start();
             start = true;
-            logger.info("rocketMq consumer [namesrvAddr={} groupName={} topic={} tag={} instanceName={}] 启动完成",
+            logger.info("rocketMq producer [namesrvAddr={} groupName={} topic={} instanceName={}] 启动完成",
                     namesrvAddr, groupName, topic, instanceName);
         } catch (Exception e) {
-            logger.warn("rocketMq consumer [namesrvAddr={} groupName={} topic={} tag={} instanceName={}] 启动失败",
+            logger.warn("rocketMq producer [namesrvAddr={} groupName={} topic={} instanceName={}] 启动失败",
                     namesrvAddr, groupName, topic, instanceName);
             throw new IllegalStateException("mq producer init fail", e);
         }
