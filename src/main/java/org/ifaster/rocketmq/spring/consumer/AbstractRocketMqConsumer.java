@@ -85,9 +85,14 @@ public abstract class AbstractRocketMqConsumer extends AbstractLifeCycle impleme
         if (isEmpty(tag)) {
             tag = "*";
         }
+        String customizedTraceTopic = getValue(env, rocketMqConsumer.customizedTraceTopic());
+        if (isEmpty(customizedTraceTopic)) {
+            customizedTraceTopic = null;
+        }
+
         String finalTag = tag;
         ignoreLog = rocketMqConsumer.ignoreLog();
-        consumer = new DefaultMQPushConsumer(groupName, rocketMqConsumer.enableMsgTrace());
+        consumer = new DefaultMQPushConsumer(groupName, rocketMqConsumer.enableMsgTrace(), customizedTraceTopic);
         consumer.setConsumeFromWhere(rocketMqConsumer.from());
         consumer.setInstanceName(instanceName);
         consumer.setNamesrvAddr(namesrvAddr);

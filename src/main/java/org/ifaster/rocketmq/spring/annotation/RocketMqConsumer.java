@@ -67,6 +67,13 @@ public @interface RocketMqConsumer {
     boolean enableMsgTrace() default true;
 
     /**
+     * 追踪日志topic 默认 RMQ_SYS_TRACE_TOPIC
+     * ${customizedTraceTopic:} :后面为默认值
+     * @return
+     */
+    String customizedTraceTopic() default "";
+
+    /**
      * 是否忽略日志 true表示忽略 false表示不忽略
      * @return
      */
