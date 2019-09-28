@@ -27,7 +27,7 @@
      <version>1.0.0</version>
     </dependency>
 
-#使用案例
+## 使用案例
     在配置文件application.yml配置
     test:
       mq:
