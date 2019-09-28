@@ -45,7 +45,7 @@ public @interface RocketMqConsumer {
      * 为空时用当前时间戳作为instanceName ${instanceName:} :后面为默认值
      * @return
      */
-    String instanceName();
+    String instanceName() default "";
 
     /**
      * batchMaxSize 批量消费最大值
@@ -58,7 +58,7 @@ public @interface RocketMqConsumer {
      * tag过滤 默认不过滤 ${tag:*}
      * @return
      */
-    String tag();
+    String tag() default "*";
 
     /**
      * 是否开启记录跟踪功能 true表示开启
